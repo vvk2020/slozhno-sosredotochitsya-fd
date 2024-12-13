@@ -3,6 +3,12 @@
 */
 
 :root {
-  /* Переменные основной (тёмной) темы */
+  /* ПЕРЕМЕННЫЕ ОСНОВНОЙ (ТЁМНОЙ) ТЕМЫ */
   --accent-color: #ff0070; /* light-theme - см. light.css */
+  --decor-color: var(--accent-color); /* цвет декоративных элементов */
+  --page__bg-image: url(../images/cover-image-dark.png);
+  /* Размеры */
+  --page__padding: 10px;  /* отступы на странице */
+  --frame-lines-size: 25px; /* размер линий декативной рамки объектива */
+  --indicator-size: 9px; /* размер декоративного круглого светового индикатора */
 }
