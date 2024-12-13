@@ -9,6 +9,7 @@
 body {
   min-inline-size: 375px;
   max-inline-size: 1440px;
+  inline-size: 375px; /* основная ширина экрана */
   margin: 0 auto;
 }
 
