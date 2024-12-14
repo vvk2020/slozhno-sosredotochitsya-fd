@@ -4,11 +4,17 @@
 
 :root {
   /* ПЕРЕМЕННЫЕ ОСНОВНОЙ (ТЁМНОЙ) ТЕМЫ */
+  /* page */
   --accent-color: #ff0070; /* light-theme - см. light.css */
   --decor-color: var(--accent-color); /* цвет декоративных элементов */
+  --page__padding: 10px; /* отступы на странице */
+  --page__title-color: #db00ff; /* цвет заголовка страницы h1 */
+  --page__title-shadow-color: var(--accent-color); /* цвет заголовка страницы h1 */
+  --subtitle-color: #000028; /* цвет под заголовка h2*/
+
+  /* header */
   --page__bg-image: url(../images/cover-image-dark.png);
-  /* Размеры */
-  --page__padding: 10px;  /* отступы на странице */
-  --frame-lines-size: 25px; /* размер линий декативной рамки объектива */
-  --indicator-size: 9px; /* размер декоративного круглого светового индикатора */
+  --decor__rec_display: block; /* display светового индикатора у REC*/
+  --frame-lines-size: 25px; /* размер линий декативной рамки у REC */
+  --indicator-size: 9px; /* размер светового индикатора у REC */
 }

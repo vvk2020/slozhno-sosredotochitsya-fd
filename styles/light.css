@@ -14,19 +14,29 @@
 
   /* Переменные светлой темы */
   --accent-color: #ff8dcb;
-  --decor-color: #353430;/* цвет декоративных элементов */
+  --decor-color: #353430; /* цвет декоративных элементов */
   --page__bg-image: url(../images/cover-image-light.png);
-  
+  --page__title-color: #ffc2e6; /* цвет заголовка страницы h1 */
+  --subtitle-color: var(--decor-color); /* цвет под заголовка h2*/
+  --decor__rec_display: none; /* скрываем декор-элемент REC */
 }
 
 .theme-light .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
 }
 
+.theme-light .header__decor-rec {
+  /* display: none; */
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     /* Дублируем переменные светлой темы */
     --page__bg-image: url(../images/cover-image-light.png);
-    --decor-color: #353430;/* цвет декоративных элементов */
+    --accent-color: #ff8dcb;
+    --decor-color: #353430; /* цвет декоративных элементов */
+    --page__title-color: #ffc2e6; /* цвет заголовка страницы h1 */    
+    --subtitle-color: var(--decor-color); /* цвет под заголовка h2*/
+    --decor__rec_display: none; /* скрываем декор-элемент REC */
   }
 }
