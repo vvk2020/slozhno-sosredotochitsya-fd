@@ -12,6 +12,8 @@
   --page__title-shadow-color: var(--accent-color); /* цвет заголовка страницы h1 */
   --subtitle-color: #000028; /* цвет под заголовка h2*/
 
+  --section__offset-top: 50px; /* top-отступ передсекциями */
+
   /* header */
   --page__bg-image: url(../images/cover-image-dark.png);
   --decor__rec_display: block; /* display светового индикатора у REC*/
