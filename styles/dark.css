@@ -10,13 +10,31 @@
     чем стили в медиазапросе предпочтений пользователя
   */
 
-  /* Дублируем переменные для тёмной темы */
+  /* Шаблоны цветов */
   --accent-color: #ff0070;
   --decor-color: var(--accent-color);
+
+  /* Заголовок уровня xxl <h1> */
+  --title-xxl_color: #db00ff; /* цвет текста */
+  --title-xxl_shadow-color: var(--accent-color); /* цвет тени текста */
+
+  /* Заголовок уровня xl <h2>*/
+
+  /* Заголовок уровня l <h3>*/
+  --title-l_color: #000028; /* --subtitle-color */
+  --title-l_bg-color: var(--accent-color);
+
+  /* Заголовок уровня m <h4>*/
+
+  /* Обычный текст */
+  --text-color: #f1b2ce;
+
+  /* Дублируем переменные для тёмной темы */
+
   --page__bg-image: url(../images/cover-image-dark.png);
-  --page__title-color: #db00ff; /* цвет заголовка страницы */
-  --subtitle-color: #000028; /* цвет под заголовка h2*/
-  --decor__rec_display:  block;
+  --decor__rec_display: block;
+
+  --bg-color: #000028; /* bg-цвет main */
 }
 
 .theme-dark .page {

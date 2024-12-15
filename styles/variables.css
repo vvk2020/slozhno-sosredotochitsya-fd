@@ -4,19 +4,40 @@
 
 :root {
   /* ПЕРЕМЕННЫЕ ОСНОВНОЙ (ТЁМНОЙ) ТЕМЫ */
-  /* page */
-  --accent-color: #ff0070; /* light-theme - см. light.css */
-  --decor-color: var(--accent-color); /* цвет декоративных элементов */
-  --page__padding: 10px; /* отступы на странице */
-  --page__title-color: #db00ff; /* цвет заголовка страницы h1 */
-  --page__title-shadow-color: var(--accent-color); /* цвет заголовка страницы h1 */
-  --subtitle-color: #000028; /* цвет под заголовка h2*/
 
-  --section__offset-top: 50px; /* top-отступ передсекциями */
+  /* Шаблоны цветов */
+  --accent-color: #ff0070;
+  --decor-color: var(--accent-color); /* цвет декоративных элементов */
+
+  /* Заголовок уровня xxl <h1> */
+  --title-xxl_color: #db00ff; /* цвет текста */
+  --title-xxl_shadow-color: var(--accent-color); /* цвет тени текста */
+
+  /* Заголовок уровня xl <h2> */
+  --title-xl_color: var(--accent-color); /* цвет текста */
+
+  /* Заголовок уровня l <h3> */
+  --title-l_color: #000028;
+  --title_l-bg-color: var(--accent-color);
+
+  /* Заголовок уровня m <h4> */
+
+  /* Обычный текст */
+  --text-color: #f1b2ce;
+
+  /* Ссылки в тексте */
+  --text-link_shadow-color: var(--accent-color);
+
+  /* page */
+
+  --page__padding: 10px; /* отступы на странице */
+  --section_offset-top: 50px; /* top-отступ перед секциями */
 
   /* header */
   --page__bg-image: url(../images/cover-image-dark.png);
   --decor__rec_display: block; /* display светового индикатора у REC*/
   --frame-lines-size: 25px; /* размер линий декативной рамки у REC */
   --indicator-size: 9px; /* размер светового индикатора у REC */
+
+  --bg-color: #000028; /* bg-цвет main */
 }

@@ -8,13 +8,75 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed; /* фон не прокручивается */
-  padding: 0 var(--page__padding);
+  /* padding: 0 var(--page__padding); */
 }
+
+/* ШАБЛОНЫ СТИЛЕЙ ЗАГОЛОВКОВ И ОБЯЧНОГО ТЕКСТА */
+
+/* Заголовок уровня xxl <h1> */
+.title_xxl {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: bold; /* 700 */
+  line-height: 82.5%;
+  color: var(--title-xxl_color);
+  text-shadow: 4px 4px 0px var(--title-xxl_shadow-color);
+}
+
+/* Заголовок уровня xl <h2> */
+.title_xl {
+  font-size: inherit; /* 18px */
+  font-weight: bold; /* 700 */
+  line-height: 130%;
+  color: var(--title-xl_color);
+  /*margin-bottom: 20px; /* var(--page__padding); */
+}
+
+/* Заголовок уровня l <h3> */
+.title_l {
+  font-size: inherit; /* 18px */
+  font-weight: bold; /* 700 */
+  line-height: 130%;
+  color: var(--title-l_color);
+  /* margin-bottom: var(--page__padding); */
+  background-color: var(--title_l-bg-color);
+}
+
+/* Заголовок уровня m <h4> */
+.title_m {
+  font-size: inherit; /* 18px */
+  font-weight: normal; /* 700 */
+  line-height: 130%;
+  color: var(--title-l_color);
+  /* margin-top: 20px; */
+  /* margin-bottom: var(--page__padding); */
+  background-color: var(--title_l-bg-color);
+}
+
+/* Обычный текст */
+.text {
+  /* font-weight: normal; /* 400; */
+  padding-top: 10px;
+}
+
+/* Текст-ссылка */
+.text-link {
+  text-decoration-line: none;
+  text-shadow: 2px 2px 0px var(--accent-color); /*--text-link_shadow-color);*/
+  /* text-shadow: 2px 2px 0px #ff0070; /*var(--title-xxl_shadow-color);*/
+  /* outline: 1px solid var(--title-xxl_shadow-color); */
+  /* outline: 0 0 1px 0; */
+  /* outline-offset: -1px; */
+  /* border: 1px solid var(--color-light);
+  border-right-color: transparent;
+  border-left-color: transparent; */
+}
+
 .header {
   block-size: 668px; /* высота для  vh375px */
   display: grid;
   grid-template-columns: 1fr 1fr; /* для выравнивания .header__subtitle */
   grid-template-rows: 1fr min-content 1fr;
+  padding: 0 var(--page__padding);
 }
 
 /* Общие стили для декативноых рамок (уголков)  */
@@ -45,7 +107,7 @@
   position: absolute;
   right: calc(var(--page__padding) + var(--frame-lines-size) + 4px);
   top: var(--page__padding);
-  font-weight: 400;
+  font-weight: normal; /* 400 */
   line-height: 139%;
   color: var(--decor-color);
 }
@@ -65,11 +127,6 @@
 
 .header__title {
   grid-column-start: span 2;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  font-weight: 700;
-  line-height: 82.5%;
-  color: var(--page__title-color);
-  text-shadow: 4px 4px 0px var(--page__title-shadow-color);
 }
 
 .header__theme-menu-list {
@@ -92,7 +149,7 @@
 }
 
 .header__theme-menu-button {
-  font-weight: 400;
+  font-weight: normal; /* 400 */
   line-height: 100%;
   text-align: center;
   color: var(--decor-color);
@@ -109,43 +166,73 @@
 .header__subtitle {
   grid-column-start: span 2;
   align-self: center;
-  font-weight: 700;
-  line-height: 130%;
-  color: var(--subtitle-color);
-  margin-bottom: var(--page__padding); /* Pixel Perfect*/
-  background-color: var(--accent-color);
+}
+
+.header .title_l {
+  margin-bottom: var(--page__padding);
 }
 
 /* Шаблон стилей секции */
 .section {
   /* block-size: 668px; /* высота для  vh375px */
-  padding-top: var(--section__offset-top);
   display: grid;
   grid-template-columns: 1fr;
-  /* grid-template-rows: 1fr 1fr; */
-  column-gap: 10px;
-  /* border: 1px dashed red; */
+  padding-top: var(--section_offset-top);
+  gap: 20px;
+}
+
+.text-block:not(:first-of-type) {
+  /* padding-top: 20px; */
+}
+
+.content {
+  padding: 0 var(--page__padding);
+  background-color: var(--bg-color);
 }
 
 /* Шаблон стилей первой секции */
 .content .section:first-of-type {
-  padding-top: calc(var(--section__offset-top) - var(--page__padding));
+  padding-top: calc(var(--section_offset-top) - var(--page__padding));
 }
 
-.reasons {
-
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
-.subtitle {
-  font-weight: 700;
-  font-size: inherit; /* 18px; */
-  line-height: 130%;
-  color: var(--accent-color);
-  padding-bottom: 20px;
+.title_l + .list {
+  padding-top: 20px;
+  /* margin-top: 20px; */
+  /* border: 1px dashed white; */
 }
 
-.reasons .subtitle {
-  /* grid-column-start: span 3; */
+/* Шаблон стилей секции */
+.section {
+  /* block-size: 668px; /* высота для  vh375px */
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-top: var(--section_offset-top);
+  gap: 20px;
+}
+
+.best-in-pictures {
+  gap: 10px;
+}
+
+.best-in-pictures .list {
+  --w: calc(100vw - 2 * var(--page__padding));
+  grid-template-rows: calc(0.4 * var(--w)) var(--w) 1fr var(--w) 1fr; /* 142px 355px 237px 355px 237px; */
+  gap: 10px;
+  padding-top: 0;
+}
+
+.best-in-pictures .image img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media (orientation: landscape) {
@@ -162,6 +249,8 @@
 @media (width >= 768px) {
   :root {
     --page__padding: 20px;
+    --section_offset-top: 80px; /* top-отступ перед секциями */
+    --pp_add-gap: 7px; /* Pixel Perfect: компенсация дополнительного смещения (ошибка макета?) */
   }
 
   .header {
@@ -179,8 +268,25 @@
 
   .section {
     grid-template-columns: 1fr 1fr 1fr;
-    /* gap: 10px; */
-    /* border: 1px dashed red; */
+  }
+
+  .reasons .list {
+    /* border: 1px dashed white; */
+    grid-column-start: span 2;
+    padding-left: var(--pp_add-gap); /* Pixel Perfect */
+  }
+
+  .bad-things .list {
+    grid-column-start: span 3;
+  }
+
+  .best-practices .block {
+    grid-column-start: span 2;
+    padding-left: var(--pp_add-gap); /* Pixel Perfect */
+  }
+
+  .best-in-pictures .title_l {
+    grid-column-start: span 3;
   }
 }
 
@@ -189,7 +295,15 @@
     block-size: 768px; /* высота для  vh1024px  */
   }
 
-  .theme-light .header__title {
-    --page__title-shadow-color: #ff0070;
+  .reasons .list {
+    padding-left: 0; /* Pixel Perfect */
+  }
+
+  .bad-things .list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .best-practices .block {
+    padding-left: 0; /* Pixel Perfect */
   }
 }

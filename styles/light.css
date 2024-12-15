@@ -12,13 +12,34 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя */
 
-  /* Переменные светлой темы */
+  /* Шаблоны цветов */
   --accent-color: #ff8dcb;
   --decor-color: #353430; /* цвет декоративных элементов */
+
+  /* Заголовок уровня xxl <h1> */
+  --title-xxl_color: #ffc2e6; /* цвет текста */
+  --title-xxl_shadow-color: var(--accent-color); /* цвет тени текста */
+
+  /* Заголовок уровня xl <h2> */
+  --title-xl_color: var(--decor-color); /* цвет текста */
+
+  /* Заголовок уровня l <h3>*/
+  --title-l_color: var(--decor-color);
+  --title-l_bg-color: var(--accent-color);
+
+  /* Заголовок уровня m <h4>*/
+
+  /* Обычный текст */
+  --text-color: var(--decor-color);
+
+  /* Ссылки в тексте */
+  --text-link_shadow-color: var(--accent-color); /* цвет тени */
+
+  /* Переменные светлой темы */
+
   --page__bg-image: url(../images/cover-image-light.png);
-  --page__title-color: #ffc2e6; /* цвет заголовка страницы h1 */
-  --subtitle-color: var(--decor-color); /* цвет под заголовка h2*/
   --decor__rec_display: none; /* скрываем декор-элемент REC */
+  --bg-color: #fff1f7; /* bg-цвет main */
 }
 
 .theme-light .page {
@@ -32,11 +53,38 @@
 @media (prefers-color-scheme: light) {
   :root {
     /* Дублируем переменные светлой темы */
-    --page__bg-image: url(../images/cover-image-light.png);
+
+    /* Шаблоны цветов */
     --accent-color: #ff8dcb;
     --decor-color: #353430; /* цвет декоративных элементов */
-    --page__title-color: #ffc2e6; /* цвет заголовка страницы h1 */    
-    --subtitle-color: var(--decor-color); /* цвет под заголовка h2*/
+
+    /* Заголовок уровня xxl <h1> */
+    --title-xxl_color: #ffc2e6; /* цвет текста */
+    --title-xxl_shadow-color: var(--accent-color); /* цвет тени текста */
+
+    /* Заголовок уровня xl <h2> */
+    --title-xl_color: var(--decor-color); /* цвет текста */
+
+    /* Заголовок уровня l <h3>*/
+    --title-l_color: var(--decor-color);
+    --title-l_bg-color: var(--accent-color);
+
+    /* Заголовок уровня m <h4>*/
+
+    /* Обычный текст */
+    --text-color: var(--decor-color);
+
+    /* Ссылки в тексте */
+    --text-link_shadow-color: var(--accent-color);  /* цвет тени */
+
+    --page__bg-image: url(../images/cover-image-light.png);
     --decor__rec_display: none; /* скрываем декор-элемент REC */
+    --bg-color: #fff1f7; /* bg-цвет main */
+  }
+}
+
+@media (width >= 1024px) {
+  .header__title {
+    --title-xxl_shadow-color: #ff0070; /* Pixel Perfect */
   }
 }
