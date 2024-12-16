@@ -25,6 +25,8 @@ https://github.com/vvk2020/slozhno-sosredotochitsya-fd
 
 ## ✅ Checklist
 - [ ] необходимость и соответствие переменных в variable.css, dark.css, light.css
+- [ ] протестировать добавление новаых блоков в <ul>
+- [ ] margin-top => margin-block-start, border-right => border-inline-end
 - [ ] href <a></a>
 - [ ] Пробелы в местах <a></a>
 - [ ] Pixel Perfect
