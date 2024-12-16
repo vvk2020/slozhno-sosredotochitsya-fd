@@ -227,7 +227,7 @@
   padding-top: 0;
 }
 
-.best-in-pictures .image img {
+.best-in-pictures img {
   display: block;
   height: 100%;
   width: 100%;
@@ -285,8 +285,39 @@
     padding-left: var(--pp_add-gap); /* Pixel Perfect */
   }
 
+  .best-in-pictures {
+    /* --w: calc(100vw - 2 * var(--page__padding)); */
+    /*grid-template-rows: calc(0.4 * var(--w)) var(--w) 1fr var(--w) 1fr; /* 142px 355px 237px 355px 237px; */
+    gap: 20px;
+    padding-top: 0;
+
+    /* grid-template-rows: auto 192px 230px 318px; */
+    grid-template-rows: auto 260px 315px 428px;
+    grid-template-areas:
+      "title title title"
+      "sunset sunset icecream"
+      "tape   books  icecream"
+      "tape   street street";
+  }
+
   .best-in-pictures .title_l {
-    grid-column-start: span 3;
+    grid-area: title;
+  }
+
+  .best-in-pictures .img-sunset {
+    grid-area: sunset;
+  }
+  .best-in-pictures .img-icecream {
+    grid-area: icecream;
+  }
+  .best-in-pictures .img-tape {
+    grid-area: tape;
+  }
+  .best-in-pictures .img-books {
+    grid-area: books;
+  }
+  .best-in-pictures .img-street {
+    grid-area: street;
   }
 }
 
