@@ -240,7 +240,7 @@
   :root {
     --page__padding: 20px;
     --section_offset-top: 80px; /* top-отступ перед секциями */
-    --pp_add-gap: 7px; /* Pixel Perfect: компенсация дополнительного смещения (ошибка макета?) */
+    --pp_add-gap: 7px; /* Pixel Perfect: компенсация доп. смещения */
   }
 
   .header,
