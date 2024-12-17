@@ -86,6 +86,7 @@
 }
 
 @media (width >= 1024px) {
+  .header__title,
   .footer__title {
     --title-xxl_shadow-color: #ff0070; /* Pixel Perfect */
   }
