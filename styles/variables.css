@@ -20,8 +20,6 @@
   --title-l_color: #000028;
   --title_l-bg-color: var(--accent-color);
 
-  /* Заголовок уровня m <h4> */
-
   /* Обычный текст */
   --text-color: #f1b2ce;
 
@@ -30,7 +28,7 @@
 
   /* page */
 
-  --page__padding: 10px; /* отступы на странице */
+  --paddings-left-right: 10px; /* отступы на странице */
   --section_offset-top: 50px; /* top-отступ перед секциями */
 
   /* header */
@@ -40,4 +38,7 @@
   --indicator-size: 9px; /* размер светового индикатора у REC */
 
   --bg-color: #000028; /* bg-цвет main */
+
+  /* outline кнпок переключения темы */
+  --theme-menu-button_outline-style: 1px solid rgba(255, 0, 112, 0.4);
 }

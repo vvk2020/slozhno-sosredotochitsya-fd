@@ -27,8 +27,6 @@
   --title-l_color: var(--decor-color);
   --title-l_bg-color: var(--accent-color);
 
-  /* Заголовок уровня m <h4>*/
-
   /* Обычный текст */
   --text-color: var(--decor-color);
 
@@ -40,6 +38,9 @@
   --page__bg-image: url(../images/cover-image-light.png);
   --decor__rec_display: none; /* скрываем декор-элемент REC */
   --bg-color: #fff1f7; /* bg-цвет main */
+
+  /* outline у кнпок переключения темы */
+  --theme-menu-button_outline-style: 1px solid rgba(50, 49, 45, 0.4);
 }
 
 .theme-light .page {
@@ -69,17 +70,18 @@
     --title-l_color: var(--decor-color);
     --title-l_bg-color: var(--accent-color);
 
-    /* Заголовок уровня m <h4>*/
-
     /* Обычный текст */
     --text-color: var(--decor-color);
 
     /* Ссылки в тексте */
-    --text-link_shadow-color: var(--accent-color);  /* цвет тени */
+    --text-link_shadow-color: var(--accent-color); /* цвет тени */
 
     --page__bg-image: url(../images/cover-image-light.png);
     --decor__rec_display: none; /* скрываем декор-элемент REC */
     --bg-color: #fff1f7; /* bg-цвет main */
+
+    /* outline у кнпок переключения темы */
+    --theme-menu-button_outline-style: 1px solid rgba(50, 49, 45, 0.4);
   }
 }
 

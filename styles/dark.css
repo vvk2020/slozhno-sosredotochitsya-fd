@@ -21,22 +21,23 @@
   /* Заголовок уровня xl <h2>*/
 
   /* Заголовок уровня l <h3>*/
-  --title-l_color: #000028; /* --subtitle-color */
+  --title-l_color: #000028;
   --title-l_bg-color: var(--accent-color);
-
-  /* Заголовок уровня m <h4>*/
 
   /* Обычный текст */
   --text-color: #f1b2ce;
 
-  /* Дублируем переменные для тёмной темы */
+  /* ДУБЛИРУЕМ ПЕРЕМЕННЫЕ ДЛЯ ТЁМНОЙ ТЕМЫ */
 
   --page__bg-image: url(../images/cover-image-dark.png);
   --decor__rec_display: block;
 
   --bg-color: #000028; /* bg-цвет main */
+
+  /* outline у кнпок переключения темы */
+  --theme-menu-button_outline-style: 1px solid rgba(255, 0, 112, 0.4);
 }
 
-.theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
-}
+/* .theme-dark .page {
+  /* Вам также нужно будет написать ряд подобных селекторов
+} */

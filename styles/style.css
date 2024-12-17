@@ -4,47 +4,46 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы 
   составлять селекторы для разных цветовых тем. */
   background-image: var(--page__bg-image);
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   background-attachment: fixed; /* фон не прокручивается */
-  /* padding: 0 var(--page__padding); */
 }
 
-/* ШАБЛОНЫ СТИЛЕЙ ЗАГОЛОВКОВ И ОБЯЧНОГО ТЕКСТА */
+/* ШАБЛОНЫ СТИЛЕЙ ЗАГОЛОВКОВ И ОБЫЧНОГО ТЕКСТА */
 
 /* Заголовок уровня xxl <h1> */
 .title_xxl {
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  font-weight: bold; /* 700 */
-  line-height: 82.5%;
   color: var(--title-xxl_color);
+  font-weight: bold; /* 700 */
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
   text-shadow: 4px 4px 0px var(--title-xxl_shadow-color);
 }
 
 /* Заголовок уровня xl <h2> */
 .title_xl {
-  font-size: inherit; /* 18px */
-  font-weight: bold; /* 700 */
-  line-height: 130%;
   color: var(--title-xl_color);
+  font-weight: bold; /* 700 */
+  font-size: inherit; /* 18px */
+  line-height: 130%;
 }
 
 /* Заголовок уровня l <h3> */
 .title_l {
-  font-size: inherit; /* 18px */
-  font-weight: bold; /* 700 */
-  line-height: 130%;
   color: var(--title-l_color);
+  font-weight: bold; /* 700 */
+  font-size: inherit; /* 18px */
+  line-height: 130%;
   background-color: var(--title_l-bg-color);
 }
 
 /* Заголовок уровня m <h4> */
 .title_m {
-  font-size: inherit; /* 18px */
-  font-weight: normal; /* 700 */
-  line-height: 130%;
   color: var(--title-l_color);
+  font-weight: normal; /* 700 */
+  font-size: inherit; /* 18px */
+  line-height: 130%;
   background-color: var(--title_l-bg-color);
 }
 
@@ -56,15 +55,27 @@
 /* Текст-ссылка */
 .text-link {
   text-decoration-line: none;
-  text-shadow: 2px 2px 0px var(--accent-color); /*--text-link_shadow-color);*/
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.text-link:focus {
+  outline-color: transparent;
+}
+.text-link:focus-visible {
+  outline: 1px solid var(--text-color);
 }
 
 .header {
-  block-size: 668px; /* высота для  vh375px */
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr; /* для выравнивания .header__subtitle */
   grid-template-rows: 1fr min-content 1fr;
-  padding: 0 var(--page__padding);
+  padding: 0 var(--paddings-left-right);
+  block-size: 668px;
 }
 
 /* Общие стили для декативноых рамок (уголков)  */
@@ -82,39 +93,42 @@
 
 .header::before,
 .footer::before {
-  bottom: var(--page__padding);
-  left: var(--page__padding);
+  bottom: var(--paddings-left-right);
+  left: var(--paddings-left-right);
   border-width: 0 0 1px 1px;
 }
 
 .header::after,
 .footer::after {
-  top: var(--page__padding);
-  right: var(--page__padding);
+  top: var(--paddings-left-right);
+  right: var(--paddings-left-right);
   border-width: 1px 1px 0 0;
 }
 
 .header__decor-rec {
-  display: var(--decor__rec_display);
   position: absolute;
-  right: calc(var(--page__padding) + var(--frame-lines-size) + 4px);
-  top: var(--page__padding);
+  top: var(--paddings-left-right);
+  right: calc(
+    var(--paddings-left-right) +
+      (var(--frame-lines-size) + var(--indicator-size)) / 2 + 11px
+  );
+  display: var(--decor__rec_display);
+  color: var(--decor-color);
   font-weight: normal; /* 400 */
   line-height: 139%;
-  color: var(--decor-color);
 }
 
 /* Круглый световой индикатор записи  REC */
 .header__decor-rec::after {
-  position: absolute;
   content: "";
+  position: absolute;
   width: var(--indicator-size);
   height: var(--indicator-size);
-  background: var(--decor-color);
-  box-shadow: 0px 0px 4px 2px var(--decor-color);
+  margin-inline-start: 10px;
+  margin-block-start: 8px;
   border-radius: 50%;
-  margin-top: 8px;
-  margin-left: 11px;
+  box-shadow: 0px 0px 4px 2px var(--decor-color);
+  background: var(--decor-color);
 }
 
 .header__title {
@@ -125,12 +139,12 @@
   display: flex;
   flex-direction: column;
   gap: 9px;
-  margin-top: calc(var(--page__padding) - 2px);
+  margin-block-start: calc(var(--paddings-left-right) - 2px);
 }
 
 .header__theme-menu {
-  grid-column-start: span 2;
   justify-items: end;
+  grid-column-start: span 2;
   align-self: center;
 }
 
@@ -141,18 +155,31 @@
 }
 
 .header__theme-menu-button {
+  border-color: transparent;
+  padding: 3px 12px;
+  color: var(--decor-color);
   font-weight: normal; /* 400 */
   line-height: 100%;
   text-align: center;
-  color: var(--decor-color);
   text-transform: lowercase;
-  padding: 3px 12px;
-  border-color: transparent;
   background-color: transparent;
 }
 
 .header__theme-menu-button_active {
   border: 1px solid var(--decor-color);
+}
+
+.header__theme-menu-button:hover {
+  outline: var(--theme-menu-button_outline-style);
+}
+
+.header__theme-menu-button:focus {
+  outline: transparent;
+}
+
+.header__theme-menu-button:focus-visible {
+  box-shadow: 0px 1px 0px 0px var(--decor-color);
+  outline: transparent;
 }
 
 .header__subtitle {
@@ -161,25 +188,30 @@
 }
 
 .header .title_l {
-  margin-bottom: var(--page__padding);
+  margin-block-end: var(--paddings-left-right);
 }
 
-/* Шаблон стилей секции */
+/* Шаблон секции */
 .section {
   display: grid;
   grid-template-columns: 1fr;
-  padding-top: var(--section_offset-top);
   gap: 20px;
+  padding-top: var(--section_offset-top);
 }
 
 .content {
-  padding: 0 var(--page__padding);
+  padding: 0 var(--paddings-left-right);
   background-color: var(--bg-color);
 }
 
 /* Шаблон стилей первой секции */
 .content .section:first-of-type {
-  padding-top: calc(var(--section_offset-top) - var(--page__padding));
+  padding-top: calc(var(--section_offset-top) - var(--paddings-left-right));
+}
+
+/* Шаблон стилей последней секции */
+.content .section:last-of-type {
+  padding-bottom: 40px;
 }
 
 .list {
@@ -192,33 +224,26 @@
   padding-top: 20px;
 }
 
-/* Шаблон стилей секции */
-.section {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding-top: var(--section_offset-top);
-  gap: 20px;
-}
-
 .best-in-pictures {
   gap: 10px;
 }
 
 .best-in-pictures img {
   display: block;
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
 .footer {
-  block-size: 668px;
-  display: grid;
   position: relative; /* для позиционирования .footer::before и ::after */
+  display: grid;
   justify-items: center;
   align-items: center;
-  margin-top: 40px;
+  padding: 0 var(--paddings-left-right);
+  background-color: var(--bg-color);
+  block-size: 668px;
 }
 
 .footer__title.title_xxl {
@@ -238,7 +263,7 @@
 
 @media (width >= 768px) {
   :root {
-    --page__padding: 20px;
+    --paddings-left-right: 20px;
     --section_offset-top: 80px; /* top-отступ перед секциями */
     --pp_add-gap: 7px; /* Pixel Perfect: компенсация доп. смещения */
   }
@@ -253,7 +278,7 @@
   }
 
   .header__title {
-    margin-left: calc(-1 * var(--page__padding));
+    margin-inline-start: calc(-1 * var(--paddings-left-right));
   }
 
   .header__subtitle {
@@ -262,6 +287,11 @@
 
   .section {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* Шаблон стилей последней секции */
+  .content .section:last-of-type {
+    padding-bottom: 60px;
   }
 
   .reasons .list {
@@ -279,12 +309,12 @@
   }
 
   .best-in-pictures {
-    gap: 20px;
     grid-template-areas:
       "title title title"
       "sunset sunset icecream"
       "tape   books  icecream"
       "tape   street street";
+    gap: 20px;
   }
 
   .best-in-pictures .title_l {
@@ -306,16 +336,25 @@
   .best-in-pictures .img-street {
     grid-area: street;
   }
-
-  .footer {
-    margin-top: 60px;
-  }
 }
 
 @media (width >= 1024px) {
   .header,
   .footer {
-    block-size: 768px; /* высота для  vh1024px  */
+    block-size: 768px;
+  }
+
+  /* 
+  Дублирование 2-х селекторов из @media (orientation: landscape) для корректной 
+  отображения меню в Pixel Perfect при ((width >= 1024px) && (orientation: portrait.
+  */
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__theme-menu {
+    justify-items: center;
+    align-self: start;
   }
 
   .reasons .list {
