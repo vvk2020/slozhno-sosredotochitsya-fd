@@ -32,8 +32,8 @@
 /* Заголовок уровня l <h3> */
 .title_l {
   color: var(--title-l_color);
-  font-weight: bold; /* 700 */
-  font-size: inherit; /* 18px */
+  font-weight: bold;
+  font-size: inherit;
   line-height: 130%;
   background-color: var(--title_l-bg-color);
 }
