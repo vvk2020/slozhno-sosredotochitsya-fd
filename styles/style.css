@@ -202,6 +202,7 @@
 .content {
   padding: 0 var(--paddings-left-right);
   background-color: var(--bg-color);
+
 }
 
 /* Шаблон стилей первой секции */
