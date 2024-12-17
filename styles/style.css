@@ -225,6 +225,10 @@
   padding-top: 20px;
 }
 
+.best-practices .title_l {
+  margin-top: -3px; /* Pixel Perfect */
+}
+
 .best-in-pictures {
   gap: 10px;
 }
