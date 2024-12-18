@@ -14,17 +14,10 @@
   --accent-color: #ff0070;
   --decor-color: var(--accent-color);
 
-  /* Заголовок уровня xxl <h1> */
-  --title-xxl_color: #db00ff; /* цвет текста */
-  --title-xxl_shadow-color: var(--accent-color); /* цвет тени текста */
-
-  /* Заголовок уровня xl <h2>*/
-
-  /* Заголовок уровня l <h3>*/
+  /* Заголовок уровня xxl */
+  --title-main_color: #db00ff;
+  --title-main_shadow-color: var(--accent-color);
   --title-l_color: #000028;
-  --title-l_bg-color: var(--accent-color);
-
-  /* Обычный текст */
   --text-color: #f1b2ce;
 
   /* ДУБЛИРУЕМ ПЕРЕМЕННЫЕ ДЛЯ ТЁМНОЙ ТЕМЫ */

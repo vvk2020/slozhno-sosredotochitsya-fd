@@ -10,41 +10,33 @@
   background-attachment: fixed; /* фон не прокручивается */
 }
 
-/* ШАБЛОНЫ СТИЛЕЙ ЗАГОЛОВКОВ И ОБЫЧНОГО ТЕКСТА */
-
-/* Заголовок уровня xxl <h1> */
-.title_xxl {
-  color: var(--title-xxl_color);
-  font-weight: bold; /* 700 */
+/* Основной заголовок <h1> */
+.title-main {
+  color: var(--title-main_color);
+  font-weight: bold;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
-  text-shadow: 4px 4px 0px var(--title-xxl_shadow-color);
+  text-shadow: 4px 4px 0px var(--title-main_shadow-color);
 }
 
-/* Заголовок уровня xl <h2> */
-.title_xl {
-  color: var(--title-xl_color);
-  font-weight: bold; /* 700 */
-  font-size: inherit; /* 18px */
-  line-height: 130%;
-}
-
-/* Заголовок уровня l <h3> */
-.title_l {
+/* Заголовки секций разного уровня */
+.title,
+.best-in-pictures > .title,
+.header__subtitle {
   color: var(--title-l_color);
   font-weight: bold;
   font-size: inherit;
   line-height: 130%;
-  background-color: var(--title_l-bg-color);
+  background-color: var(--accent-color);
 }
 
-/* Заголовок уровня m <h4> */
-.title_m {
-  color: var(--title-l_color);
-  font-weight: normal; /* 700 */
-  font-size: inherit; /* 18px */
-  line-height: 130%;
-  background-color: var(--title_l-bg-color);
+h2.title {
+  color: var(--title-xl_color);
+  background-color: transparent;
+}
+
+h4.title {
+  font-weight: normal;
 }
 
 /* Обычный текст */
@@ -59,7 +51,7 @@
 }
 
 .text-link:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid var(--text-color);
 }
 
 .text-link:focus {
@@ -69,13 +61,18 @@
   outline: 1px solid var(--text-color);
 }
 
-.header {
-  position: relative;
+.header,
+.footer {
+  position: relative; /* для ::before и ::after */
   display: grid;
-  grid-template-columns: 1fr 1fr; /* для выравнивания .header__subtitle */
-  grid-template-rows: 1fr min-content 1fr;
   padding: 0 var(--paddings-left-right);
-  block-size: 668px;
+  block-size: 100vh;
+  min-block-size: 668px;
+}
+
+.header {
+  grid-template-columns: 1fr 1fr; /* выравнивание .header__subtitle */
+  grid-template-rows: 1fr min-content 1fr;
 }
 
 /* Общие стили для декативноых рамок (уголков)  */
@@ -114,7 +111,7 @@
   );
   display: var(--decor__rec_display);
   color: var(--decor-color);
-  font-weight: normal; /* 400 */
+  font-weight: normal;
   line-height: 139%;
 }
 
@@ -143,8 +140,8 @@
 }
 
 .header__theme-menu {
-  justify-items: end;
   grid-column-start: span 2;
+  justify-self: end;
   align-self: center;
 }
 
@@ -158,15 +155,17 @@
   border-color: transparent;
   padding: 3px 12px;
   color: var(--decor-color);
-  font-weight: normal; /* 400 */
+  font-weight: normal;
   line-height: 100%;
   text-align: center;
   text-transform: lowercase;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
   border: 1px solid var(--decor-color);
+  pointer-events: none; /* кликабельность только с клавиатуры */
 }
 
 .header__theme-menu-button:hover {
@@ -185,10 +184,8 @@
 .header__subtitle {
   grid-column-start: span 2;
   align-self: center;
-}
-
-.header .title_l {
   margin-block-end: var(--paddings-left-right);
+  background-color: var(--accent-color);
 }
 
 /* Шаблон секции */
@@ -202,15 +199,14 @@
 .content {
   padding: 0 var(--paddings-left-right);
   background-color: var(--bg-color);
-
 }
 
-/* Шаблон стилей первой секции */
+/* Шаблон первой секции */
 .content .section:first-of-type {
   padding-top: calc(var(--section_offset-top) - var(--paddings-left-right));
 }
 
-/* Шаблон стилей последней секции */
+/* Шаблон последней секции */
 .content .section:last-of-type {
   padding-bottom: 40px;
 }
@@ -221,16 +217,13 @@
   gap: 20px;
 }
 
-.title_l + .list {
+h3.title + .list {
   padding-top: 20px;
-}
-
-.best-practices .title_l {
-  margin-top: -3px; /* Pixel Perfect */
 }
 
 .best-in-pictures {
   gap: 10px;
+  margin-top: -2px; /* Pixel Perfect */
 }
 
 .best-in-pictures img {
@@ -242,17 +235,13 @@
 }
 
 .footer {
-  position: relative; /* для позиционирования .footer::before и ::after */
-  display: grid;
   justify-items: center;
   align-items: center;
-  padding: 0 var(--paddings-left-right);
   background-color: var(--bg-color);
-  block-size: 668px;
 }
 
-.footer__title.title_xxl {
-  text-shadow: 2px 2px 0px var(--title-xxl_shadow-color);
+.footer__title.title-main {
+  text-shadow: 2px 2px 0px var(--title-main_shadow-color);
 }
 
 @media (orientation: landscape) {
@@ -269,16 +258,16 @@
 @media (width >= 768px) {
   :root {
     --paddings-left-right: 20px;
-    --section_offset-top: 80px; /* top-отступ перед секциями */
+    --section_offset-top: 80px; /* отступ перед секциями */
     --pp_add-gap: 7px; /* Pixel Perfect: компенсация доп. смещения */
   }
 
   .header,
   .footer {
-    block-size: 1024px; /* высота для  vh768px  */
+    min-block-size: 1024px;
   }
 
-  .title_xxl {
+  .title-main {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
@@ -294,7 +283,7 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  /* Шаблон стилей последней секции */
+  /* Шаблон последней секции */
   .content .section:last-of-type {
     padding-bottom: 60px;
   }
@@ -322,7 +311,7 @@
     gap: 20px;
   }
 
-  .best-in-pictures .title_l {
+  .best-in-pictures .title {
     grid-area: title;
   }
 
@@ -346,19 +335,19 @@
 @media (width >= 1024px) {
   .header,
   .footer {
-    block-size: 768px;
+    min-block-size: 768px;
   }
 
   /* 
-  Дублирование 2-х селекторов из @media (orientation: landscape) для корректной 
-  отображения меню в Pixel Perfect при ((width >= 1024px) && (orientation: portrait.
+  Дублирование 2-х селекторов из @media (orientation: landscape) для корректного 
+  отображения меню (Pixel Perfect) при ((width >= 1024px) && (orientation: portrait))
   */
   .header__theme-menu-list {
     flex-direction: row;
   }
 
   .header__theme-menu {
-    justify-items: center;
+    justify-self: center;
     align-self: start;
   }
 

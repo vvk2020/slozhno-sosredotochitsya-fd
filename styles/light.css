@@ -16,22 +16,12 @@
   --accent-color: #ff8dcb;
   --decor-color: #353430; /* цвет декоративных элементов */
 
-  /* Заголовок уровня xxl <h1> */
-  --title-xxl_color: #ffc2e6; /* цвет текста */
-  --title-xxl_shadow-color: var(--accent-color); /* цвет тени текста */
-
-  /* Заголовок уровня xl <h2> */
+  /* Заголовок уровня xxl */
+  --title-main_color: #ffc2e6; /* цвет текста */
+  --title-main_shadow-color: var(--accent-color); /* цвет тени текста */
   --title-xl_color: var(--decor-color); /* цвет текста */
-
-  /* Заголовок уровня l <h3>*/
   --title-l_color: var(--decor-color);
-  --title-l_bg-color: var(--accent-color);
-
-  /* Обычный текст */
   --text-color: var(--decor-color);
-
-  /* Ссылки в тексте */
-  --text-link_shadow-color: var(--accent-color); /* цвет тени */
 
   /* Переменные светлой темы */
 
@@ -43,13 +33,13 @@
   --theme-menu-button_outline-style: 1px solid rgba(50, 49, 45, 0.4);
 }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+/* Вам также нужно будет написать ряд подобных селекторов */
+/* .theme-light .page {
+  
 }
 
 .theme-light .header__decor-rec {
-  /* display: none; */
-}
+} */
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -59,22 +49,11 @@
     --accent-color: #ff8dcb;
     --decor-color: #353430; /* цвет декоративных элементов */
 
-    /* Заголовок уровня xxl <h1> */
-    --title-xxl_color: #ffc2e6; /* цвет текста */
-    --title-xxl_shadow-color: var(--accent-color); /* цвет тени текста */
-
-    /* Заголовок уровня xl <h2> */
-    --title-xl_color: var(--decor-color); /* цвет текста */
-
-    /* Заголовок уровня l <h3>*/
+    /* Заголовки и текст */
+    --title-main_color: #ffc2e6; /* цвет текста */
+    --title-main_shadow-color: var(--accent-color); /* цвет тени текста */
     --title-l_color: var(--decor-color);
-    --title-l_bg-color: var(--accent-color);
-
-    /* Обычный текст */
     --text-color: var(--decor-color);
-
-    /* Ссылки в тексте */
-    --text-link_shadow-color: var(--accent-color); /* цвет тени */
 
     --page__bg-image: url(../images/cover-image-light.png);
     --decor__rec_display: none; /* скрываем декор-элемент REC */
@@ -88,6 +67,6 @@
 @media (width >= 1024px) {
   .header__title,
   .footer__title {
-    --title-xxl_shadow-color: #ff0070; /* Pixel Perfect */
+    --title-main_shadow-color: #ff0070; /* Pixel Perfect */
   }
 }
