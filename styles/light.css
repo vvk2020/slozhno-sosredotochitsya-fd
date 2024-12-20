@@ -52,6 +52,7 @@
     /* Заголовки и текст */
     --title-main_color: #ffc2e6; /* цвет текста */
     --title-main_shadow-color: var(--accent-color); /* цвет тени текста */
+    --title-xl_color: var(--decor-color); /* цвет текста */
     --title-l_color: var(--decor-color);
     --text-color: var(--decor-color);
 
