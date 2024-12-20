@@ -198,7 +198,7 @@ h4.title {
 
 .content {
   padding: 0 var(--paddings-left-right);
-  background-color: var(--bg-color);
+  /* background-color: var(--bg-color); */
 }
 
 /* Шаблон первой секции */
