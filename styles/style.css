@@ -198,7 +198,6 @@ h4.title {
 
 .content {
   padding: 0 var(--paddings-left-right);
-  /* background-color: var(--bg-color); */
 }
 
 /* Шаблон первой секции */
@@ -237,7 +236,6 @@ h3.title + .list {
 .footer {
   justify-items: center;
   align-items: center;
-  background-color: var(--bg-color);
 }
 
 .footer__title.title-main {
